@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% for note in notes %}
+        <div class="col-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <a class="p-1 mb-1 bg-dark text-white rounded text-decoration-none"
+                       href="{{ url_for('get_board', board_id=note.board.id) }}">{{ note.board.name }}</a>
+                    <p class="card-text">{{ note.content[:300] }}... <a class="text-decoration-none"
+                                                                        href="{{ url_for('get_note', note_id=note.id) }}">View</a></p>
+                    <p class="card-title">Date of creation {{ note.start_time }}</p>
+                    {% if note.change_time %}
+                    <p class="card-title">Date of change {{ note.change_time }}</p>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="{{ url_for('edit_note', note_id=note.id) }}">Change</a>
+                    <a class="btn btn-danger" href="{{ url_for('delete_note', note_id=note.id) }}">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}

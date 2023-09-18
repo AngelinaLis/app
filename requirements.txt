@@ -1,0 +1,8 @@
+starlette
+uvicorn
+fastapi
+SQLAlchemy
+jinja2
+python-multipart
+pydantic
+psycopg2-binary
