@@ -1,11 +1,9 @@
 from datetime import datetime
 
 import starlette.status as status
-from fastapi import APIRouter, Depends, Form, Request, responses
-from fastapi.responses import RedirectResponse
-
 from database import get_session
-from models import Board, Note
+from fastapi import APIRouter, Depends, Form, Request, responses
+from models import Board
 from settings import TEMPLATES
 
 router = APIRouter()

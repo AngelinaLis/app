@@ -1,10 +1,9 @@
 from datetime import datetime
 
 import starlette.status as status
+from database import get_session
 from fastapi import APIRouter, Depends, Form, Request, responses
 from fastapi.responses import RedirectResponse
-
-from database import get_session
 from models import Board, Note
 from settings import TEMPLATES
 

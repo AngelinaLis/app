@@ -1,7 +1,7 @@
-python3 -m venv venv
+FastAPI-Postgres-Docker
 
-source venv/bin/activate
 
-python3 -m pip install -r requirements.txt
+How to run this with Docker?
 
-python3 app.py
+* Make sure you have docker installed and running on your machine
+* Open the terminal to the docker-compose path and hit the following command - docker-compose up --build
